@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(98% 0.01 240); /* Light, slightly warm gray */
+  --foreground: oklch(15% 0.02 240); /* Dark charcoal */
+  --card: oklch(100% 0 0); /* Pure white */
+  --card-foreground: oklch(15% 0.02 240); /* Dark charcoal */
+  --popover: oklch(100% 0 0); /* Pure white */
+  --popover-foreground: oklch(15% 0.02 240); /* Dark charcoal */
+  --primary: oklch(45% 0.15 160); /* Muted Teal */
+  --primary-foreground: oklch(98% 0.01 240); /* Off-white */
+  --secondary: oklch(95% 0.01 240); /* Light gray */
+  --secondary-foreground: oklch(25% 0.02 240); /* Darker gray */
+  --muted: oklch(95% 0.01 240); /* Light gray */
+  --muted-foreground: oklch(50% 0.02 240); /* Medium gray */
+  --accent: oklch(92% 0.01 240); /* Slightly darker light gray */
+  --accent-foreground: oklch(25% 0.02 240); /* Darker gray */
+  --destructive: oklch(60% 0.25 15); /* Muted Red */
+  --destructive-foreground: oklch(98% 0.01 15); /* Off-white */
+  --border: oklch(90% 0.01 240); /* Light border gray */
+  --input: oklch(90% 0.01 240); /* Light input border */
+  --ring: oklch(45% 0.15 160); /* Primary color for focus ring */
+  --chart-1: oklch(45% 0.15 160); /* Teal */
+  --chart-2: oklch(60% 0.2 60); /* Gold */
+  --chart-3: oklch(70% 0.1 280); /* Muted Purple */
+  --chart-4: oklch(50% 0.18 100); /* Olive Green */
+  --chart-5: oklch(75% 0.1 320); /* Soft Pink */
+  --radius: 0.75rem;
+  --sidebar: oklch(100% 0 0); /* White for sidebar */
+  --sidebar-foreground: oklch(15% 0.02 240); /* Dark charcoal */
+  --sidebar-primary: oklch(45% 0.15 160); /* Muted Teal */
+  --sidebar-primary-foreground: oklch(98% 0.01 240); /* Off-white */
+  --sidebar-accent: oklch(92% 0.01 240); /* Accent for sidebar items */
+  --sidebar-accent-foreground: oklch(25% 0.02 240); /* Darker gray */
+  --sidebar-border: oklch(90% 0.01 240); /* Light border gray */
+  --sidebar-ring: oklch(45% 0.15 160); /* Primary color for focus ring */
+}
+
+.dark {
+  --background: oklch(12% 0.01 240); /* Dark charcoal background */
+  --foreground: oklch(90% 0.01 240); /* Light gray foreground */
+  --card: oklch(15% 0.01 240); /* Slightly lighter dark charcoal for cards */
+  --card-foreground: oklch(90% 0.01 240); /* Light gray */
+  --popover: oklch(15% 0.01 240); /* Slightly lighter dark charcoal for popovers */
+  --popover-foreground: oklch(90% 0.01 240); /* Light gray */
+  --primary: oklch(60% 0.15 160); /* Brighter Teal */
+  --primary-foreground: oklch(15% 0.01 240); /* Dark charcoal */
+  --secondary: oklch(20% 0.01 240); /* Darker gray */
+  --secondary-foreground: oklch(80% 0.01 240); /* Lighter gray */
+  --muted: oklch(20% 0.01 240); /* Darker gray */
+  --muted-foreground: oklch(60% 0.01 240); /* Medium gray */
+  --accent: oklch(25% 0.01 240); /* Slightly lighter dark gray */
+  --accent-foreground: oklch(80% 0.01 240); /* Lighter gray */
+  --destructive: oklch(65% 0.25 15); /* Brighter Red */
+  --destructive-foreground: oklch(90% 0.01 15); /* Light red */
+  --border: oklch(20% 0.01 240); /* Dark border gray */
+  --input: oklch(20% 0.01 240); /* Dark input border */
+  --ring: oklch(60% 0.15 160); /* Primary color for focus ring */
+  --chart-1: oklch(60% 0.15 160); /* Teal */
+  --chart-2: oklch(70% 0.2 60); /* Gold */
+  --chart-3: oklch(80% 0.1 280); /* Muted Purple */
+  --chart-4: oklch(65% 0.18 100); /* Olive Green */
+  --chart-5: oklch(85% 0.1 320); /* Soft Pink */
+  --sidebar: oklch(15% 0.01 240); /* Dark charcoal for sidebar */
+  --sidebar-foreground: oklch(90% 0.01 240); /* Light gray */
+  --sidebar-primary: oklch(60% 0.15 160); /* Brighter Teal */
+  --sidebar-primary-foreground: oklch(15% 0.01 240); /* Dark charcoal */
+  --sidebar-accent: oklch(25% 0.01 240); /* Accent for sidebar items */
+  --sidebar-accent-foreground: oklch(80% 0.01 240); /* Lighter gray */
+  --sidebar-border: oklch(20% 0.01 240); /* Dark border gray */
+  --sidebar-ring: oklch(60% 0.15 160); /* Primary color for focus ring */
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.7 0.05 240); /* Muted gray for scrollbar */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.6 0.08 240); /* Slightly darker on hover */
+}
+
+/* Smooth transitions */
+* {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}

@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.container h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.hello-button {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.hello-button:hover {
+  background-color: #535bf2;
+}
+
+.hello-button:focus {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
