@@ -79,10 +79,11 @@ export default function EmployeeDetails({ employee }: EmployeeDetailsProps) {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link href="/dashboard/employees">
-            <Button variant="outline" size="sm">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Employees
-            </Button>
+           <Button variant="outline" size="sm" className="cursor-pointer">
+  <ArrowLeft className="h-4 w-4 mr-2" />
+  Back to Employees
+</Button>
+
           </Link>
           <div>
             <h1 className="text-3xl font-bold text-foreground">Employee Details</h1>
@@ -91,17 +92,18 @@ export default function EmployeeDetails({ employee }: EmployeeDetailsProps) {
         </div>
         <div className="flex space-x-2">
           <Link href={`/dashboard/employees/${employee._id}/edit`}>
-            <Button>
-              <Edit className="h-4 w-4 mr-2" />
+            <Button className="cursor-pointer">
+              <Edit className="h-4 w-4 mr-2 " />
               Edit Employee
             </Button>
           </Link>
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button variant="destructive">
-                <Trash className="h-4 w-4 mr-2" />
-                Delete Employee
-              </Button>
+             <Button variant="destructive" className="cursor-pointer">
+  <Trash className="h-4 w-4 mr-2" />
+  Delete Employee
+</Button>
+
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
@@ -199,9 +201,9 @@ export default function EmployeeDetails({ employee }: EmployeeDetailsProps) {
         <div className="lg:col-span-2">
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="overview">Overview</TabsTrigger>
-              <TabsTrigger value="assessment">Assessment</TabsTrigger>
-              <TabsTrigger value="insights">Insights</TabsTrigger>
+              <TabsTrigger value="overview" className="cursor-pointer">Overview</TabsTrigger>
+              <TabsTrigger value="assessment" className="cursor-pointer">Assessment</TabsTrigger>
+              <TabsTrigger value="insights" className="cursor-pointer">Insights</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="space-y-6">

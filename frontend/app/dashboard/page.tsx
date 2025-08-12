@@ -192,7 +192,7 @@ export default function DashboardPage() {
                   className="w-full text-left p-3 h-auto justify-start rounded-lg border border-border hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
                 >
                   <div className="font-medium">View All Employees</div>
-                  <div className="text-sm text-muted-foreground">Manage employee records and assessments</div>
+                  <div className="text-sm text-muted-foreground"> Track employee progress & metrics</div>
                 </Button>
               </Link>
               <Link href="/dashboard/employees/add" className="block">
@@ -213,7 +213,7 @@ export default function DashboardPage() {
                   <Download className="h-4 w-4 mr-2" />
                   <div className="font-medium">Export Reports</div>
                 </div>
-                <div className="text-sm text-muted-foreground">Download assessment data (CSV)</div>
+                <div className="text-sm text-muted-foreground">Download (CSV) file</div>
               </Button>
             </div>
           </CardContent>

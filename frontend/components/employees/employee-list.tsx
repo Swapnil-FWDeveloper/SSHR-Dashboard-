@@ -245,47 +245,48 @@ export default function EmployeeList({ employees, isLoading, error }: EmployeeLi
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2 mt-4 md:mt-0">
-                <Link href={`/dashboard/employees/${employee._id}`}>
-                  <Button variant="outline" size="sm">
-                    <Eye className="h-4 w-4 mr-1" />
-                    View
-                  </Button>
-                </Link>
-                <Link href={`/dashboard/employees/${employee._id}/edit`}>
-                  <Button variant="outline" size="sm">
-                    <Edit className="h-4 w-4 mr-1" />
-                    Edit
-                  </Button>
-                </Link>
-                <AlertDialog>
-                  <AlertDialogTrigger asChild>
-                    <Button variant="destructive" size="sm">
-                      <Trash className="h-4 w-4 mr-1" />
-                      Delete
-                    </Button>
-                  </AlertDialogTrigger>
-                  <AlertDialogContent>
-                    <AlertDialogHeader>
-                      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                      <AlertDialogDescription>
-                        This action cannot be undone. This will permanently delete{" "}
-                        <span className="font-semibold">{employee.name}</span>'s record and remove their data from our
-                        servers.
-                      </AlertDialogDescription>
-                    </AlertDialogHeader>
-                    <AlertDialogFooter>
-                      <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <AlertDialogAction
-                        onClick={() => handleDelete(employee._id!)}
-                        className="bg-destructive hover:bg-destructive/90"
-                      >
-                        Delete
-                      </AlertDialogAction>
-                    </AlertDialogFooter>
-                  </AlertDialogContent>
-                </AlertDialog>
-              </div>
+        <div className="flex items-center space-x-2 mt-4 md:mt-0">
+  <Link href={`/dashboard/employees/${employee._id}`}>
+    <Button variant="outline" size="sm" className="cursor-pointer">
+      <Eye className="h-4 w-4 mr-1" />
+      View
+    </Button>
+  </Link>
+  <Link href={`/dashboard/employees/${employee._id}/edit`}>
+    <Button variant="outline" size="sm" className="cursor-pointer">
+      <Edit className="h-4 w-4 mr-1" />
+      Edit
+    </Button>
+  </Link>
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <Button variant="destructive" size="sm" className="cursor-pointer">
+        <Trash className="h-4 w-4 mr-1" />
+        Delete
+      </Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+        <AlertDialogDescription>
+          This action cannot be undone. This will permanently delete{" "}
+          <span className="font-semibold">{employee.name}</span>'s record and remove their data from our
+          servers.
+        </AlertDialogDescription>
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel className="cursor-pointer">Cancel</AlertDialogCancel>
+        <AlertDialogAction
+          onClick={() => handleDelete(employee._id!)}
+          className="bg-destructive hover:bg-destructive/90 cursor-pointer"
+        >
+          Delete
+        </AlertDialogAction>
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialog>
+</div>
+
             </div>
           </CardContent>
         </Card>

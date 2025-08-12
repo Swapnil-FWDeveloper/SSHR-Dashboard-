@@ -141,12 +141,12 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="flex items-center justify-between">
         <Link href={`/dashboard/employees/${employee._id}`}>
-          <Button type="button" variant="outline" size="sm">
+          <Button type="button" variant="outline" size="sm" className="cursor-pointer">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Details
           </Button>
         </Link>
-        <Button type="submit" disabled={isLoading}>
+        <Button type="submit" disabled={isLoading} className="cursor-pointer">
           {isLoading ? (
             <div className="flex items-center">
               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground mr-2"></div>
@@ -163,9 +163,9 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="basic">Basic Information</TabsTrigger>
-          <TabsTrigger value="assessment">Assessment</TabsTrigger>
-          <TabsTrigger value="profile">Profile & Tags</TabsTrigger>
+          <TabsTrigger value="basic" className="cursor-pointer">Basic Information</TabsTrigger>
+          <TabsTrigger value="assessment" className="cursor-pointer">Assessment</TabsTrigger>
+          <TabsTrigger value="profile" className="cursor-pointer">Profile & Tags</TabsTrigger>
         </TabsList>
 
         <TabsContent value="basic" className="space-y-6">
@@ -201,7 +201,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
               <div>
                 <Label htmlFor="role">Role/Position *</Label>
                 <Select value={formData.role} onValueChange={(value) => handleInputChange("role", value)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="cursor-pointer">
                     <SelectValue placeholder="Select role" />
                   </SelectTrigger>
                   <SelectContent>
@@ -219,7 +219,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                 </Select>
               </div>
 
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 cursor-pointer">
                 <Switch
                   id="assessment_submitted"
                   checked={formData.assessment_submitted}
@@ -244,9 +244,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                     <Label htmlFor={question.id} className="text-sm font-medium">
                       {question.label}
                     </Label>
-                    <Badge variant="outline" className="text-xs">
-                      {question.category}
-                    </Badge>
+                    <Badge variant="outline" className="text-xs">{question.category}</Badge>
                   </div>
                   <Textarea
                     id={question.id}
@@ -274,7 +272,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                     value={formData.interest_area}
                     onValueChange={(value) => handleInputChange("interest_area", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select interest area" />
                     </SelectTrigger>
                     <SelectContent>
@@ -293,7 +291,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                     value={formData.long_term_goals}
                     onValueChange={(value) => handleInputChange("long_term_goals", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select goals" />
                     </SelectTrigger>
                     <SelectContent>
@@ -312,7 +310,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                     value={formData.work_culture_preference}
                     onValueChange={(value) => handleInputChange("work_culture_preference", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select culture preference" />
                     </SelectTrigger>
                     <SelectContent>
@@ -331,7 +329,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                     value={formData.learning_attitude}
                     onValueChange={(value) => handleInputChange("learning_attitude", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select learning attitude" />
                     </SelectTrigger>
                     <SelectContent>
@@ -372,7 +370,7 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                   placeholder="Enter a tag"
                   onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addTag())}
                 />
-                <Button type="button" onClick={addTag} variant="outline">
+                <Button type="button" onClick={addTag} variant="outline" className="cursor-pointer">
                   <Plus className="h-4 w-4" />
                 </Button>
               </div>
@@ -382,7 +380,11 @@ export default function EditEmployeeForm({ employee }: EditEmployeeFormProps) {
                   {(formData.tags || []).map((tag, index) => (
                     <Badge key={index} variant="secondary" className="flex items-center space-x-1">
                       <span>{tag}</span>
-                      <button type="button" onClick={() => removeTag(tag)} className="ml-1 hover:text-destructive">
+                      <button
+                        type="button"
+                        onClick={() => removeTag(tag)}
+                        className="ml-1 hover:text-destructive cursor-pointer"
+                      >
                         <X className="h-3 w-3" />
                       </button>
                     </Badge>

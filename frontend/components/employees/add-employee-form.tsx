@@ -99,10 +99,11 @@ export default function AddEmployeeForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="flex items-center justify-between">
         <Link href="/dashboard/employees">
-          <Button type="button" variant="outline" size="sm">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Employees
-          </Button>
+      <Button type="button" variant="outline" size="sm" className="cursor-pointer">
+  <ArrowLeft className="h-4 w-4 mr-2" />
+  Back to Employees
+</Button>
+
         </Link>
         <Button type="submit" disabled={isLoading}>
           {isLoading ? (
@@ -121,9 +122,10 @@ export default function AddEmployeeForm() {
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="basic">Basic Information</TabsTrigger>
-          <TabsTrigger value="assessment">Assessment</TabsTrigger>
-          <TabsTrigger value="profile">Profile & Tags</TabsTrigger>
+          <TabsTrigger value="basic" className="cursor-pointer">Basic Information</TabsTrigger>
+<TabsTrigger value="assessment" className="cursor-pointer">Assessment</TabsTrigger>
+<TabsTrigger value="profile" className="cursor-pointer">Profile & Tags</TabsTrigger>
+
         </TabsList>
 
         <TabsContent value="basic" className="space-y-6">
@@ -162,8 +164,8 @@ export default function AddEmployeeForm() {
                   <SelectTrigger>
                     <SelectValue placeholder="Select role" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Software Engineer">Software Engineer</SelectItem>
+                  <SelectContent className="cursor-pointer">
+                    <SelectItem value="Software Engineer ">Software Engineer</SelectItem>
                     <SelectItem value="Senior Software Engineer">Senior Software Engineer</SelectItem>
                     <SelectItem value="Product Manager">Product Manager</SelectItem>
                     <SelectItem value="Designer">Designer</SelectItem>
@@ -234,10 +236,10 @@ export default function AddEmployeeForm() {
                     value={formData.interest_area}
                     onValueChange={(value) => handleInputChange("interest_area", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select interest area" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="cursor-pointer">
                       <SelectItem value="AI Enthusiast">AI Enthusiast</SelectItem>
                       <SelectItem value="HR-Tech Passionate">HR-Tech Passionate</SelectItem>
                       <SelectItem value="Innovation Focused">Innovation Focused</SelectItem>
@@ -253,10 +255,10 @@ export default function AddEmployeeForm() {
                     value={formData.long_term_goals}
                     onValueChange={(value) => handleInputChange("long_term_goals", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select goals" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="cursor-pointer">
                       <SelectItem value="Career-focused">Career-focused</SelectItem>
                       <SelectItem value="Entrepreneurial">Entrepreneurial</SelectItem>
                       <SelectItem value="Technical Excellence">Technical Excellence</SelectItem>
@@ -272,8 +274,8 @@ export default function AddEmployeeForm() {
                     value={formData.work_culture_preference}
                     onValueChange={(value) => handleInputChange("work_culture_preference", value)}
                   >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select culture preference" />
+                    <SelectTrigger className="cursor-pointer">
+                      <SelectValue placeholder="Select culture preference" className="cursor-pointer" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="Healthy culture">Healthy Culture</SelectItem>
@@ -291,10 +293,10 @@ export default function AddEmployeeForm() {
                     value={formData.learning_attitude}
                     onValueChange={(value) => handleInputChange("learning_attitude", value)}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className="cursor-pointer">
                       <SelectValue placeholder="Select learning attitude" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="cursor-pointer">
                       <SelectItem value="Active Learner">Active Learner</SelectItem>
                       <SelectItem value="Passive">Passive</SelectItem>
                       <SelectItem value="Self-directed">Self-directed</SelectItem>
@@ -334,7 +336,7 @@ export default function AddEmployeeForm() {
                   placeholder="Enter a tag"
                   onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addTag())}
                 />
-                <Button type="button" onClick={addTag} variant="outline">
+                <Button type="button" onClick={addTag} variant="outline cursor-pointer">
                   <Plus className="h-4 w-4" />
                 </Button>
               </div>
